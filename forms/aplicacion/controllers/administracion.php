@@ -246,9 +246,10 @@ class Administracion extends CI_Controller {
 
 		$crud->set_table('formularios');
 		$crud->set_subject('Formulario');
-		$crud->unset_columns('formulario_id','freg');
+		$crud->unset_columns('formulario_id','nombre_corto','freg');
 		$crud->unset_edit_fields('formulario_id','freg');
-		$crud->fields('nombre_formulario','descripcion','autorespuesta');
+		$crud->fields('nombre_formulario','descripcion','email_emisor','email_revisor','autorespuesta');
+		$crud->unset_add();
 	//	$crud->callback_column('buyPrice',array($this,'valueToEuro'));
 
 		$output = $crud->render();

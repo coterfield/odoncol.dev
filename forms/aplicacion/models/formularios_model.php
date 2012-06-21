@@ -20,7 +20,7 @@ class Formularios_model extends CI_Model
 		parent::__construct();
 	}
 
-	function get_formularios($formulario_id = FALSE)
+	function get_formularios($formulario_id = FALSE, $nombre_corto = FALSE)
 	{
 	//	$query = $this->db->get($this->formularios_table);
 
@@ -30,6 +30,11 @@ class Formularios_model extends CI_Model
 		if($formulario_id)
 		{
 			$this->db->where('formulario_id', $formulario_id);
+		}
+
+		if($nombre_corto)
+		{
+			$this->db->where('nombre_corto', $nombre_corto);
 		}
 
 		$query = $this->db->get();

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+	<title>Bienvenido al servicio de consultas del Colegio Odontológico del Peru</title>
 
 	<style type="text/css">
 
@@ -67,22 +67,23 @@
 <body>
 
 <div id="container">
-	<h1>Bienvenido al Sistema de Formularios de Odoncol!</h1>
+	<h1>Bienvenido al servicio de consultas del Colegio Odontológico del Peru</h1>
 
 	<div id="body">
-		<p>Chekin.</p>
-<!--
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
--->
+		<p>En estos momentos estamos realizando trabajos de mantenimiento para brindarle un mejor servicio.</p>
+		<p>Por favor intente más tarde.</p>
 	</div>
 
+<?php if (FALSE): ?>
+
 	<p class="footer">Generado en <strong>{elapsed_time}</strong> segundos</p>
+
+<?php else: ?>
+
+	<p class="footer"> Portal: <a href="http://col.org.pe">http://col.org.pe</a> </p>
+
+<?php endif; ?>
+
 </div>
 
 </body>

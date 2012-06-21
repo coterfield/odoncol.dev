@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Formepp extends CI_Controller {
+class Epp extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
