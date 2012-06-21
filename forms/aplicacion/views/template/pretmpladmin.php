@@ -129,10 +129,10 @@
 							<div class="menu-main-container">
 								<ul id="menu-main" class="menu">
 								<li id="" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="/forms/administracion/">Inicio</a></li>
-								<li id="" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="/forms/administracion/formularios_managment">Formularios</a>
+								<li id="" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="/forms/administracion/formularios">Formularios</a>
 									<ul class="sub-menu">
 										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Contacto</a></li>
-										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/tformepp_managment/">EPP</a></li>
+										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/epp/">EPP</a></li>
 										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">SOAT</a></li>
 										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Hepatitis</a></li>
 										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Voluntariado</a></li>
@@ -143,10 +143,10 @@
 								</li>
 								<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Tablas</a>
 									<ul class="sub-menu">
-										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/formularios_managment">Formularios</a></li>
-										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/sedes_managment">Sedes</a></li>
-										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/cursos_managment">Cursos</a></li>
-										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/tipocursos_managment">Tipos de Cursos</a></li>
+										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/formularios">Formularios</a></li>
+										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/sedes">Sedes</a></li>
+										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/cursos">Cursos</a></li>
+										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/tipocursos">Tipos de Cursos</a></li>
 									</ul>
 								</li>
 								<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/web/">Salir de Administración</a></li>

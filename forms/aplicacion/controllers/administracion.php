@@ -157,7 +157,7 @@ class Administracion extends CI_Controller {
 		$this->_example_output($output);
 	}
 
-	function tformepp_managment()
+	function epp()
 	{
 		$crud = new grocery_CRUD();
 
@@ -181,7 +181,7 @@ class Administracion extends CI_Controller {
 		$this->_example_output($output);
 	}
 
-	function cursos_managment()
+	function cursos()
 	{
 		$crud = new grocery_CRUD();
 
@@ -206,7 +206,7 @@ class Administracion extends CI_Controller {
 	}
 
 
-	function sedes_managment()
+	function sedes()
 	{
 		$crud = new grocery_CRUD();
 
@@ -223,7 +223,7 @@ class Administracion extends CI_Controller {
 	}
 
 
-	function tipocursos_managment()
+	function tipocursos()
 	{
 		$crud = new grocery_CRUD();
 
@@ -240,7 +240,7 @@ class Administracion extends CI_Controller {
 	}
 
 
-	function formularios_managment()
+	function formularios()
 	{
 		$crud = new grocery_CRUD();
 
