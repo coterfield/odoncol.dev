@@ -83,7 +83,7 @@ class Hepatitis extends CI_Controller {
 				$this->send_mail($email,$data['formulario']);
 			}
 
-			$this->load->view('form_soat', $data);
+			$this->load->view('form_hepatitis', $data);
 		}
 		$this->load->view('template/postmpl', $data);
 
@@ -108,7 +108,7 @@ class Hepatitis extends CI_Controller {
 
 	public function send_mail($email, $formulario = FALSE)
 	{
-		$data['form_title'] = 'Formulario Soat';
+		$data['form_title'] = 'Formulario Hepatitis';
 		$data['formulario'] = $formulario;
 
 		$this->load->library( 'email' );

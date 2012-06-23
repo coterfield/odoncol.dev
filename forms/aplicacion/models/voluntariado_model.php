@@ -1,12 +1,12 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 // @TODO: algunos joins
-// Soat_model
+// Voluntariado_model
 
-class Soat_model extends CI_Model
+class Voluntariado_model extends CI_Model
 {
 
-	var $formsoat_table	= 'formsoat';
+	var $formvoluntariado_table	= 'formvoluntariado';
 
 	var $title	= '';
 	var $content= '';
@@ -26,15 +26,16 @@ class Soat_model extends CI_Model
 			'nombres' => $this->input->post("nombres"),
 			'apellido_paterno' => $this->input->post("apellido_paterno"),
 			'apellido_materno' => $this->input->post("apellido_materno"),
-			'dni' => $this->input->post("dni"),
-			'ncop' => $this->input->post("ncop"),
-			'placa' => $this->input->post("placa"),
 			'email' => $this->input->post("email"),
+			'direccion' => $this->input->post("direccion"),
 			'telefono' => $this->input->post("telefono"),
-			'celular' => $this->input->post("celular")
+			'celular' => $this->input->post("celular"),
+			'universidad' => $this->input->post("universidad"),
+			'estado' => $this->input->post("estado"),
+			'ncop' => $this->input->post("ncop"),
 		);
 
-		$this->db->insert($this->formsoat_table, $data);
+		$this->db->insert($this->formvoluntariado_table, $data);
 		$id = $this->db->insert_id();
 
 		return $id;
@@ -42,7 +43,7 @@ class Soat_model extends CI_Model
 
 	function get_last_ten_entries()
 	{
-		$query = $this->db->get($this->formsoat_table, 10);
+		$query = $this->db->get($this->formvoluntariado_table, 10);
 		return $query->result();
 	}
 

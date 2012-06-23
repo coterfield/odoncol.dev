@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Voluntariado extends CI_Controller {
+class Denuncia extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -29,7 +29,7 @@ class Voluntariado extends CI_Controller {
 		/* ------------------ */
 
 		$this->load->library('grocery_CRUD');
-		$this->load->model('voluntariado_model');
+		$this->load->model('denuncia_model');
 		$this->load->model('formularios_model');
 
 		date_default_timezone_set('America/Lima');
@@ -39,42 +39,32 @@ class Voluntariado extends CI_Controller {
 	{
 	//	echo "<h1>Welcome to the world of Codeigniter</h1>";//Just an example to ensure that we get into the function
 	//	die();
-		$data['form_title'] = 'Formulario Voluntariado';
+		$data['form_title'] = 'Formulario Denuncia';
 
 		$this->load->helper(array('form', 'url'));
 
 		$this->load->library('form_validation');
 
-		$data['formulario'] = $this->formularios_model->get_formularios(FALSE,'formvolu');
+		$data['formulario'] = $this->formularios_model->get_formularios(FALSE,'formdenu');
 
 		$data['randNum1'] = rand(0,9);
 		$data['randNum2'] = rand(0,9);
 
 		$this->firephp->info($data['formulario']);
 
-
-		$extrarule = $this->input->post('estado')=='colegiado' ? 'required' : '';
-
-		$this->form_validation->set_rules('nombres', 'Nombres', 'trim|required|min_length[3]|xss_clean');
-		$this->form_validation->set_rules('apellido_paterno', 'Apellido Paterno', 'trim|required|min_length[3]|xss_clean');
-		$this->form_validation->set_rules('apellido_materno', 'Apellido Materno', 'trim|required|min_length[3]|xss_clean');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-		$this->form_validation->set_rules('direccion', 'Direccion', 'trim|required|min_length[3]|xss_clean');
-		$this->form_validation->set_rules('telefono', 'Teléfono', 'trim|required|numeric');
-		$this->form_validation->set_rules('celular', 'Celular', 'trim|numeric');
-		$this->form_validation->set_rules('universidad', 'Universidad', 'trim|required|min_length[3]|xss_clean');
-		$this->form_validation->set_rules('estado', 'Estado', 'trim|required|min_length[3]|xss_clean');
-		$this->form_validation->set_rules('ncop', 'Nº de Colegiatura', 'trim'.$extrarule.'|numeric');
+		$this->form_validation->set_rules('nombre', 'Nombre o Seudónimo', 'trim|required|min_length[3]|xss_clean');
+		$this->form_validation->set_rules('email', 'Email', 'trim|valid_email');
+		$this->form_validation->set_rules('denuncia', 'Denuncia', 'trim|required|min_length[3]|xss_clean');
 
 
-		$this->load->view('template/pretmpl_voluntariado', $data);
+		$this->load->view('template/pretmpl_denuncia', $data);
 		if ($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('form_voluntariado', $data);
+			$this->load->view('form_denuncia', $data);
 		}
 		else
 		{
-			$this->voluntariado_model->save_form();
+			$this->denuncia_model->save_form();
 
 			$email = $this->input->post("email");
 
@@ -87,7 +77,7 @@ class Voluntariado extends CI_Controller {
 				$this->send_mail($email,$data['formulario']);
 			}
 
-			$this->load->view('form_voluntariado', $data);
+			$this->load->view('form_denuncia', $data);
 		}
 		$this->load->view('template/postmpl', $data);
 
@@ -112,7 +102,7 @@ class Voluntariado extends CI_Controller {
 
 	public function send_mail($email, $formulario = FALSE)
 	{
-		$data['form_title'] = 'Formulario Voluntariado';
+		$data['form_title'] = 'Formulario Denuncia';
 		$data['formulario'] = $formulario;
 
 		$this->load->library( 'email' );

@@ -13,7 +13,7 @@
 	<link rel="alternate" type="application/rss+xml" title="Colegio Odontológico de Lima &raquo; Feed" href="http://www.col.org.pe/web/feed/" />
 	<link rel="alternate" type="application/rss+xml" title="Colegio Odontológico de Lima &raquo; RSS de los comentarios" href="http://www.col.org.pe/web/comments/feed/" />
 	<link rel='stylesheet' id='admin-bar-css'  href='/web/wp-includes/css/admin-bar.css?ver=20111209' type='text/css' media='all' />
-	<link rel='stylesheet' id='tribe-events-calendar-style-css'  href='/web/wp-content/plugins/the-events-calendar/resources/events.css?ver=3.3.2' type='text/css' media='all' />
+	<!--link rel='stylesheet' id='tribe-events-calendar-style-css'  href='/web/wp-content/plugins/the-events-calendar/resources/events.css?ver=3.3.2' type='text/css' media='all' /-->
 	<!--link rel='stylesheet' id='contact-form-7-css'  href='/web/wp-content/plugins/contact-form-7/styles.css?ver=3.1.2' type='text/css' media='all' /-->
 	<script type='text/javascript' src='/web/wp-includes/js/jquery/jquery.js?ver=1.7.1'></script>
 	<script type='text/javascript' src='/web/wp-content/plugins/the-events-calendar/resources/jquery.pjax.js?ver=3.3.2'></script>
@@ -131,14 +131,14 @@
 								<li id="" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="/forms/administracion/">Inicio</a></li>
 								<li id="" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="/forms/administracion/formularios">Formularios</a>
 									<ul class="sub-menu">
-										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Contacto</a></li>
 										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/epp/">EPP</a></li>
-										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">SOAT</a></li>
-										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Hepatitis</a></li>
-										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Voluntariado</a></li>
-										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Sugerencias</a></li>
+										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/soat/">SOAT</a></li>
+										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/hepatitis/">Hepatitis</a></li>
+										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/voluntariado/">Voluntariado</a></li>
+										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/sugerencias/">Sugerencias</a></li>
+										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/datos/">Genérico</a></li>
+										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/forms/administracion/denuncia/">Denuncia</a></li>
 										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Inscripción</a></li>
-										<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Genérico</a></li>
 									</ul>
 								</li>
 								<li id="" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">Tablas</a>

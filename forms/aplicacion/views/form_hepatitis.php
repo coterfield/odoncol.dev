@@ -10,7 +10,7 @@
 					</div>
 					<?php echo validation_errors(); ?>
 
-					<form action="hepatitis" method="post" id="soat" accept-charset="utf-8" class="validate">
+					<form action="hepatitis" method="post" id="hepatitis" accept-charset="utf-8" class="validate">
 
 						<fieldset class="set">
 
@@ -41,8 +41,8 @@
 
 
 							<div class="field">
-								<label>Dosis que le corresponde: <span>(chosen plugin)</span></label>
-								<div class="entry">
+								<label>Dosis que le corresponde: <span></span></label>
+								<div class="entry small">
 									<select class="required chosen" placeholder="Dosis" name="dosis" id="dosis">
 										<option value="">Elija nº de dosis</option>
 										<option value="1ra dosis">1ra dosis</option>
@@ -62,9 +62,9 @@
 
 
 							<div class="field">
-								<label>Edad: </label>
+								<label>Edad: <span>(en años)</span></label>
 								<div class="entry tiny">
-									<input type="text" placeholder="Su edad" class="required digits" name="edad" id="edad" /> años
+									<input type="text" placeholder="Su edad" class="required digits" name="edad" id="edad" />
 								</div>
 							</div>
 

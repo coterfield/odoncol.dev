@@ -1,12 +1,12 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 // @TODO: algunos joins
-// Datos_model
+// Denuncia_model
 
-class Datos_model extends CI_Model
+class Denuncia_model extends CI_Model
 {
 
-	var $formdatos_table	= 'formdatos';
+	var $formdenuncia_table	= 'formdenuncia';
 
 	var $title	= '';
 	var $content= '';
@@ -23,14 +23,12 @@ class Datos_model extends CI_Model
 	function save_form()
 	{
 		$data = array(
-			'nombres' => $this->input->post("nombres"),
-			'apellidos' => $this->input->post("apellidos"),
-			'ncop' => $this->input->post("ncop"),
+			'nombre' => $this->input->post("nombre"),
 			'email' => $this->input->post("email"),
-			'direccion' => $this->input->post("direccion"),
+			'denuncia' => $this->input->post("denuncia"),
 		);
 
-		$this->db->insert($this->formdatos_table, $data);
+		$this->db->insert($this->formdenuncia_table, $data);
 		$id = $this->db->insert_id();
 
 		return $id;
@@ -38,7 +36,7 @@ class Datos_model extends CI_Model
 
 	function get_last_ten_entries()
 	{
-		$query = $this->db->get($this->formdatos_table, 10);
+		$query = $this->db->get($this->formdenuncia_table, 10);
 		return $query->result();
 	}
 

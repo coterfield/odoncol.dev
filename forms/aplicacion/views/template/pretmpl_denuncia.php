@@ -91,65 +91,18 @@
 			return !chekval || value != chekval;
 		}, "Este es un dato requerido.");
 
-		jQuery("#nombre_completo").rules("add", {
+		jQuery("#nombre").rules("add", {
 			chekholdr: true,
 			messages: {
-				required: "Debe ingresar su(s) nombre(s) y apellidos",
-				chekholdr: "Debe ingresar su(s) nombre(s) y apellidos"
-			}
-		});
-
-		jQuery("#seguridad").rules("add", {
-			required: true,
-			digits: true,
-			sumsec: true,
-			messages: {
-				required: "Complete la operación",
-				digits: "Complete la operación",
-				sumsec: "Complete la operación"
+				required: "Debe ingresar su nombre o seudónimo",
+				chekholdr: "Debe ingresar su nombre o seudónimo"
 			}
 		});
 
 
-		jQuery("#dni").rules("add", {
-			chekholdr: true,
+		jQuery("#denuncia").rules("add", {
 			messages: {
-				required: "Debe ingresar su DNI",
-				chekholdr: "Debe ingresar su DNI"
-			}
-		});
-
-		jQuery("#ncop").rules("add", {
-			chekholdr: true,
-			messages: {
-				required: "Debe ingresar su Nº de Colegiatura",
-				chekholdr: "Debe ingresar su Nº de Colegiatura"
-			}
-		});
-
-
-		jQuery("#direccion").rules("add", {
-			chekholdr: true,
-			messages: {
-				required: "Debe ingresar su dirección",
-				chekholdr: "Debe ingresar su dirección"
-			}
-		});
-
-
-		jQuery("#ciudad").rules("add", {
-			chekholdr: true,
-			messages: {
-				required: "Debe ingresar su ciudad",
-				chekholdr: "Debe ingresar su ciudad"
-			}
-		});
-
-		jQuery("#telefono").rules("add", {
-			chekholdr: true,
-			messages: {
-				required: "Debe ingresar su Nº de teléfono",
-				chekholdr: "Debe ingresar su Nº de teléfono"
+				required: "Debe ingresar su Denuncia"
 			}
 		});
 

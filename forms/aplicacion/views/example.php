@@ -51,7 +51,7 @@ a:hover
 
 <?php if (trim($output) != ''): ?>
 
-		<p>Descargar archivo excel</p>
+		<!--p>Descargar archivo excel</p-->
 		<br />
 		<?php echo $output; ?>
 

@@ -82,6 +82,10 @@
 
 		//added by me
 
+		jQuery.validator.addMethod("mathsec", function(value, element, params) {
+			return this.optional(element) || value == params[0] + params[1];
+		}, jQuery.format("Por favor ingrese el valor correcto para {0} + {1}"));
+
 		jQuery.validator.addMethod("sumsec", function(value, element) {
 			return this.optional(element) || value == <?=$randNum1+$randNum2?>;
 		}, jQuery.format("Complete la operación"));
@@ -91,11 +95,19 @@
 			return !chekval || value != chekval;
 		}, "Este es un dato requerido.");
 
-		jQuery("#nombre_completo").rules("add", {
+		jQuery("#nombres").rules("add", {
 			chekholdr: true,
 			messages: {
-				required: "Debe ingresar su(s) nombre(s) y apellidos",
-				chekholdr: "Debe ingresar su(s) nombre(s) y apellidos"
+				required: "Debe ingresar su(s) nombre(s)",
+				chekholdr: "Debe ingresar su(s) nombre(s)"
+			}
+		});
+
+		jQuery("#apellidos").rules("add", {
+			chekholdr: true,
+			messages: {
+				required: "Debe ingresar su(s) apellido(s)",
+				chekholdr: "Debe ingresar su(s) apellido(s)"
 			}
 		});
 
@@ -128,28 +140,15 @@
 		});
 
 
-		jQuery("#direccion").rules("add", {
-			chekholdr: true,
+		jQuery("#area").rules("add", {
 			messages: {
-				required: "Debe ingresar su dirección",
-				chekholdr: "Debe ingresar su dirección"
+				required: "Debe elegir un área o departamento"
 			}
 		});
 
-
-		jQuery("#ciudad").rules("add", {
-			chekholdr: true,
+		jQuery("#comentario").rules("add", {
 			messages: {
-				required: "Debe ingresar su ciudad",
-				chekholdr: "Debe ingresar su ciudad"
-			}
-		});
-
-		jQuery("#telefono").rules("add", {
-			chekholdr: true,
-			messages: {
-				required: "Debe ingresar su Nº de teléfono",
-				chekholdr: "Debe ingresar su Nº de teléfono"
+				required: "Debe ingresar su Comentario"
 			}
 		});
 

@@ -157,29 +157,6 @@ class Administracion extends CI_Controller {
 		$this->_example_output($output);
 	}
 
-	function epp()
-	{
-		$crud = new grocery_CRUD();
-
-		$crud->set_table('tformepp');
-		$crud->set_subject('Pre Inscripción');
-
-		$crud->set_relation_n_n('cursos', 'tformepp_cursos', 'cursos', 'tformepp_id', 'curso_id', 'nombre_curso','prioridad');
-
-//array('status' => 'active')
-
-		$crud->unset_columns('freg');
-		$crud->unset_edit_fields('freg');
-
-		$crud->fields('nombres','apellido_paterno','apellido_materno','ncop','email','telefono','celular','cursos');
-
-	//	$crud->unset_columns('productDescription');
-	//	$crud->callback_column('buyPrice',array($this,'valueToEuro'));
-
-		$output = $crud->render();
-
-		$this->_example_output($output);
-	}
 
 	function cursos()
 	{
@@ -246,10 +223,16 @@ class Administracion extends CI_Controller {
 
 		$crud->set_table('formularios');
 		$crud->set_subject('Formulario');
-		$crud->unset_columns('formulario_id','nombre_corto','freg');
+		$crud->unset_columns('formulario_id','nombre_corto','email_emisor','freg');
 		$crud->unset_edit_fields('formulario_id','freg');
-		$crud->fields('nombre_formulario','descripcion','email_emisor','email_revisor','autorespuesta');
-		$crud->unset_add();
+		if ($_SERVER['SERVER_ADDR'] == '72.9.154.62') {
+			$crud->fields('nombre_formulario','descripcion','email_emisor','email_revisor','autorespuesta');
+		} else {
+			$crud->fields('nombre_formulario','nombre_corto','descripcion','email_emisor','email_revisor','autorespuesta');
+		}
+		if ($_SERVER['SERVER_ADDR'] == '72.9.154.62') {
+			$crud->unset_add();
+		}
 	//	$crud->callback_column('buyPrice',array($this,'valueToEuro'));
 
 		$output = $crud->render();
@@ -257,6 +240,154 @@ class Administracion extends CI_Controller {
 		$this->_example_output($output);
 	}
 
+
+	function epp()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_table('tformepp');
+		$crud->set_subject('Pre Inscripción');
+
+		$crud->set_relation_n_n('cursos', 'tformepp_cursos', 'cursos', 'tformepp_id', 'curso_id', 'nombre_curso','prioridad');
+
+//array('status' => 'active')
+
+		$crud->unset_columns('freg');
+		$crud->unset_edit_fields('freg');
+
+		$crud->fields('nombres','apellido_paterno','apellido_materno','ncop','email','telefono','celular','cursos');
+
+	//	$crud->unset_columns('productDescription');
+	//	$crud->callback_column('buyPrice',array($this,'valueToEuro'));
+
+		$output = $crud->render();
+
+		$this->_example_output($output);
+	}
+
+	function hepatitis()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_table('formhepatitis');
+		$crud->set_subject('Beneficiario');
+
+		$crud->unset_columns('freg');
+		$crud->unset_edit_fields('freg');
+
+		$crud->fields('nombre_completo','dni','ncop','dosis','direccion','edad','ciudad','telefono','email');
+
+	//	$crud->unset_columns('productDescription');
+	//	$crud->callback_column('buyPrice',array($this,'valueToEuro'));
+
+		$output = $crud->render();
+
+		$this->_example_output($output);
+	}
+
+
+	function soat()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_table('formsoat');
+		$crud->set_subject('Soat');
+
+		$crud->unset_columns('freg');
+		$crud->unset_edit_fields('freg');
+
+		$crud->fields('nombres','apellido_paterno','apellido_materno','dni','ncop','placa','email','telefono','celular');
+
+	//	$crud->unset_columns('productDescription');
+	//	$crud->callback_column('buyPrice',array($this,'valueToEuro'));
+
+		$output = $crud->render();
+
+		$this->_example_output($output);
+	}
+
+
+	function datos()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_table('formdatos');
+		$crud->set_subject('Contacto');
+
+		$crud->unset_columns('freg');
+		$crud->unset_edit_fields('freg');
+
+		$crud->fields('nombres','apellidos','ncop','email','direccion');
+
+	//	$crud->unset_columns('productDescription');
+	//	$crud->callback_column('buyPrice',array($this,'valueToEuro'));
+
+		$output = $crud->render();
+
+		$this->_example_output($output);
+	}
+
+	function voluntariado()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_table('formvoluntariado');
+		$crud->set_subject('Voluntario');
+
+		$crud->unset_columns('freg');
+		$crud->unset_edit_fields('freg');
+
+		$crud->fields('nombres','apellido_paterno','apellido_materno','email','direccion','telefono','celular','universidad','estado','ncop');
+
+	//	$crud->unset_columns('productDescription');
+	//	$crud->callback_column('buyPrice',array($this,'valueToEuro'));
+
+		$output = $crud->render();
+
+		$this->_example_output($output);
+	}
+
+
+	function sugerencias()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_table('formsugerencias');
+		$crud->set_subject('Sugerencia');
+
+		$crud->unset_columns('freg');
+		$crud->unset_edit_fields('freg');
+
+		$crud->fields('nombres','apellidos','area','ncop','dni','email','comentario');
+
+	//	$crud->unset_columns('productDescription');
+	//	$crud->callback_column('buyPrice',array($this,'valueToEuro'));
+
+		$output = $crud->render();
+
+		$this->_example_output($output);
+	}
+
+
+	function denuncia()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_table('formdenuncia');
+		$crud->set_subject('Denuncia');
+
+		$crud->unset_columns('freg');
+		$crud->unset_edit_fields('freg');
+
+		$crud->fields('nombre','email','denuncia');
+
+	//	$crud->unset_columns('productDescription');
+	//	$crud->callback_column('buyPrice',array($this,'valueToEuro'));
+
+		$output = $crud->render();
+
+		$this->_example_output($output);
+	}
 
 
 }

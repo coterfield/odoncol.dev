@@ -131,27 +131,19 @@
 			}
 		});
 
-		jQuery("#dni").rules("add", {
+		jQuery("#direccion").rules("add", {
 			chekholdr: true,
 			messages: {
-				required: "Debe ingresar su DNI",
-				chekholdr: "Debe ingresar su DNI"
+				required: "Debe ingresar su direccion",
+				chekholdr: "Debe ingresar su direccion"
 			}
 		});
 
-		jQuery("#ncop").rules("add", {
+		jQuery("#universidad").rules("add", {
 			chekholdr: true,
 			messages: {
-				required: "Debe ingresar su Nº de Colegiatura",
-				chekholdr: "Debe ingresar su Nº de Colegiatura"
-			}
-		});
-
-		jQuery("#placa").rules("add", {
-			chekholdr: true,
-			messages: {
-				required: "Debe ingresar su Placa",
-				chekholdr: "Debe ingresar su Placa"
+				required: "Debe ingresar su universidad",
+				chekholdr: "Debe ingresar su universidad"
 			}
 		});
 
@@ -162,6 +154,40 @@
 				chekholdr: "Debe ingresar su Nº de teléfono"
 			}
 		});
+
+		jQuery("#celular").rules("add", {
+			chekholdr: true,
+			messages: {
+				required: "Debe ingresar su Nº de celular",
+				chekholdr: "Debe ingresar su Nº de celular"
+			}
+		});
+
+		jQuery('#estado').change(function() {
+		//	alert(this.value);
+
+			if (this.value == "Colegiado") {
+
+				jQuery("#ncop").rules("add", {
+					required: true,
+					chekholdr: true,
+					messages: {
+						required: "Debe ingresar su Nº de Colegiatura",
+						chekholdr: "Debe ingresar su Nº de Colegiatura"
+					}
+				});
+
+				jQuery('#fld_ncop').show();
+
+			} else {
+
+				jQuery('#fld_ncop').hide();
+				jQuery("#ncop").rules("remove", "required chekholdr");
+
+			}
+		});
+
+		jQuery('#fld_ncop').hide();
 
 	});
 	</script>

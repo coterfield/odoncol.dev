@@ -172,9 +172,11 @@ pip-log.txt
 user_guide/
 sources/
 web/
+inscribe/
 user_guide/**/*
 sources/**/*
 web/**/*
+inscribe/**/*
 *.log
 
 # Sublime Text 2

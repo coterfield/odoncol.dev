@@ -490,7 +490,7 @@ textarea::-moz-focus-inner {
 }
 body {
   font-size: 13px;
-  color: #B8A992;
+  color: #6F679A;/*#B8A992*/
   line-height: 160%;
 /*  background: #191919 url("/images/background-pattern.gif") repeat;*/
   overflow-y: visible;
@@ -3267,8 +3267,8 @@ textarea,
 }
 .heading,
 .page-status .heading {
-  background: #dfdfdf;
-  border-bottom: 3px solid #E7E7E7;
+  background: #DCDAE7;/*dfdfdf*/
+  border-bottom: 3px solid #E8E7EE;/*E7E7E7*/
   padding: 10px;
   height: 20px;
 }
@@ -3680,7 +3680,7 @@ div.entry .ui-spinner .ui-spinner-buttons .ui-spinner-button:hover,
 .page-status .field .chzn-container,
 .field .chzn-drop,
 .page-status .field .chzn-drop {
-  width: 100% !important;
+  width: 100%;/*!important;*/
 }
 .field .entry,
 .page-status .field .entry {
@@ -3810,7 +3810,7 @@ div.entry .ui-spinner .ui-spinner-buttons .ui-spinner-button:hover,
   color: #fff;
 }
 .single nav li a {
-  color: #B8A992;
+  color: #6F679A;/*#B8A992*/
   font-weight: bold;
   display: block;
   padding: 7px 10px;

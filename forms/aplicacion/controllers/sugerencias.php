@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Soat extends CI_Controller {
+class Sugerencias extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -29,7 +29,7 @@ class Soat extends CI_Controller {
 		/* ------------------ */
 
 		$this->load->library('grocery_CRUD');
-		$this->load->model('soat_model');
+		$this->load->model('sugerencias_model');
 		$this->load->model('formularios_model');
 
 		date_default_timezone_set('America/Lima');
@@ -39,13 +39,13 @@ class Soat extends CI_Controller {
 	{
 	//	echo "<h1>Welcome to the world of Codeigniter</h1>";//Just an example to ensure that we get into the function
 	//	die();
-		$data['form_title'] = 'Formulario SOAT';
+		$data['form_title'] = 'Formulario Sugerencias';
 
 		$this->load->helper(array('form', 'url'));
 
 		$this->load->library('form_validation');
 
-		$data['formulario'] = $this->formularios_model->get_formularios(FALSE,'formsoat');
+		$data['formulario'] = $this->formularios_model->get_formularios(FALSE,'formsuge');
 
 		$data['randNum1'] = rand(0,9);
 		$data['randNum2'] = rand(0,9);
@@ -53,23 +53,22 @@ class Soat extends CI_Controller {
 		$this->firephp->info($data['formulario']);
 
 		$this->form_validation->set_rules('nombres', 'Nombres', 'trim|required|min_length[3]|xss_clean');
-		$this->form_validation->set_rules('apellido_paterno', 'Apellido Paterno', 'trim|required|min_length[3]|xss_clean');
-		$this->form_validation->set_rules('apellido_materno', 'Apellido Materno', 'trim|required|min_length[3]|xss_clean');
-		$this->form_validation->set_rules('ncop', 'Nº DNI', 'trim|required|numeric');
+		$this->form_validation->set_rules('apellidos', 'Apellidos', 'trim|required|min_length[3]|xss_clean');
+		$this->form_validation->set_rules('area', 'Departamento o Àrea', 'trim|required|min_length[3]|xss_clean');
 		$this->form_validation->set_rules('ncop', 'Nº de Colegiatura', 'trim|required|numeric');
+		$this->form_validation->set_rules('dni', 'Nº DNI', 'trim|required|numeric');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-		$this->form_validation->set_rules('telefono', 'Teléfono', 'trim|required|numeric');
-		$this->form_validation->set_rules('celular', 'Celular', 'trim|numeric');
+		$this->form_validation->set_rules('comentario', 'Comentario', 'trim|required|min_length[3]|xss_clean');
 
 
-		$this->load->view('template/pretmpl_soat', $data);
+		$this->load->view('template/pretmpl_sugerencias', $data);
 		if ($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('form_soat', $data);
+			$this->load->view('form_sugerencias', $data);
 		}
 		else
 		{
-			$this->soat_model->save_form();
+			$this->sugerencias_model->save_form();
 
 			$email = $this->input->post("email");
 
@@ -82,7 +81,7 @@ class Soat extends CI_Controller {
 				$this->send_mail($email,$data['formulario']);
 			}
 
-			$this->load->view('form_soat', $data);
+			$this->load->view('form_sugerencias', $data);
 		}
 		$this->load->view('template/postmpl', $data);
 
@@ -107,7 +106,7 @@ class Soat extends CI_Controller {
 
 	public function send_mail($email, $formulario = FALSE)
 	{
-		$data['form_title'] = 'Formulario Soat';
+		$data['form_title'] = 'Formulario Sugerencias';
 		$data['formulario'] = $formulario;
 
 		$this->load->library( 'email' );

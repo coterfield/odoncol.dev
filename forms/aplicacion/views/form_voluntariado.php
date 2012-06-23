@@ -10,7 +10,7 @@
 					</div>
 					<?php echo validation_errors(); ?>
 
-					<form action="soat" method="post" id="soat" accept-charset="utf-8" class="validate">
+					<form action="voluntariado" method="post" id="voluntariado" accept-charset="utf-8" class="validate">
 
 						<fieldset class="set">
 
@@ -35,26 +35,6 @@
 								</div>
 							</div>
 
-							<div class="field">
-								<label>Nº DNI: </label>
-								<div class="entry small">
-									<input type="text" placeholder="Nº de DNI" class="required digits" name="dni" id="dni" minlength="8" />
-								</div>
-							</div>
-
-							<div class="field">
-								<label>Nº COP: </label>
-								<div class="entry small">
-									<input type="text" placeholder="Nº de Colegiatura" class="required" name="ncop" id="ncop" />
-								</div>
-							</div>
-
-							<div class="field">
-								<label>Nº Placa: </label>
-								<div class="entry small">
-									<input type="text" placeholder="Placa" class="required" name="placa" id="placa" />
-								</div>
-							</div>
 
 							<div class="field">
 								<label>EMail: </label>
@@ -64,14 +44,47 @@
 							</div>
 
 							<div class="field">
+								<label>Dirección: </label>
+								<div class="entry">
+									<input type="text" placeholder="Dirección" class="required" name="direccion" id="direccion" minlength="5"/>
+								</div>
+							</div>
+
+							<div class="field">
 								<label>Números de Contacto: </label>
 								<div class="entry">
 									<div class="dual">
 										<input type="text" placeholder="teléfono" class="required" name="telefono" id="telefono" />
-										<input type="text" placeholder="celular" class="" name="celular" id="celular" />
+										<input type="text" placeholder="celular" class="required" name="celular" id="celular" />
 									</div>
 								</div>
 							</div>
+
+							<div class="field">
+								<label>Universidad: </label>
+								<div class="entry small">
+									<input type="text" placeholder="Universidad" class="required" name="universidad" id="universidad" minlength="3" />
+								</div>
+							</div>
+
+							<div class="field">
+								<label>Estado: <span></span></label>
+								<div class="entry small">
+									<select class="required chosen" placeholder="Estado" name="estado" id="estado">
+										<option value="">Elija estado</option>
+										<option value="Estudiante">Estudiante</option>
+										<option value="Colegiado">Colegiado</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="field" id="fld_ncop">
+								<label>Nº COP: </label>
+								<div class="entry small">
+									<input type="text" placeholder="Nº de Colegiatura" class="required" name="ncop" id="ncop" />
+								</div>
+							</div>
+
 						</fieldset>
 
 						<p>&nbsp;</p>
