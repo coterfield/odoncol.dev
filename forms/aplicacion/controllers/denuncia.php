@@ -77,10 +77,10 @@ class Denuncia extends CI_Controller {
 				$this->send_mail($email,$data['formulario']);
 			}
 
-			$this->load->view('form_denuncia', $data);
+			$this->load->view('msg_gracias', $data);
+			$this->firephp->info($data);
 		}
 		$this->load->view('template/postmpl', $data);
-
 	}
 
 	public function cursos()

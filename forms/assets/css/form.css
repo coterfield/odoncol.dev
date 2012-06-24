@@ -3213,7 +3213,7 @@ textarea,
 .page-status textarea {
   height: auto;
   width: 350px;
-  min-height: 85px;
+  min-height: 200px;/*85px added by me*/
 }
 .check-list input[type=checkbox],
 .page-status .check-list input[type=checkbox] {
@@ -3655,6 +3655,7 @@ div.entry .ui-spinner .ui-spinner-buttons .ui-spinner-button:hover,
   margin-top: 5px;
   -moz-box-sizing: border-box;
   float: left;
+  text-align: right;/*added by me*/
 }
 .field > label span,
 .page-status .field > label span {
