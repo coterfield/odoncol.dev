@@ -8,8 +8,8 @@
 						<?=$formulario['descripcion']?>
 						<div class="clear"></div>
 						<div>
-							<p>Gracias por completar este formulario a continucación le recomendamos los siguientes artículos y contenidos relacionadoss</p>
-							<p>Volver al formulario <a href="/forms/denuncia">de Denuncia</a></p>
+							<p>Gracias por su denuncia.</p>
+							<p>Volver al <a href="/forms/denuncia">formulario de Denuncia</a></p>
 						</div>
 						<div class="clear"></div>
 					</div>

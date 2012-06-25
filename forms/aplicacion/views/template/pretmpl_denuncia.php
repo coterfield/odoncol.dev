@@ -57,7 +57,7 @@
 	<!--script src="/forms/assets/js/jquery.tipsy.js"></script-->
 	<script src="/forms/assets/js/jquery.maskedinput-1.3.min.js"></script>
 	<script src="/forms/assets/js/jquery.validate.min.js"></script>
-	<!--script src="/forms/assets/js/messages_es.js"></script-->
+	<script src="/forms/assets/js/messages_es.js"></script>
 	<!--script src="/forms/assets/js/jquery.validationEngine-es.js"></script-->
 	<!--script src="/forms/assets/js/jquery.validationEngine.js"></script-->
 	<!--script src="/forms/assets/js/jquery.elastic.js"></script-->
@@ -91,17 +91,38 @@
 			var chekval = jQuery(element).attr('placeholder');
 			return !chekval || value != chekval;
 		}, "Este es un dato requerido.");
-	/*
+
+		jQuery.validator.addMethod("emailnchekholdr", function(value, element) {
+			var chekval = jQuery(element).attr('placeholder');
+
+			if ( this.optional(element) && value == chekval )
+				return "dependency-mismatch";
+
+			if ( value != chekval )
+				return /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i.test(value);
+
+		//	return !chekval || value != chekval;
+			return true;
+		}, "Ingrese una dirección email ´valida.");
+
+	
 		jQuery("#nombre").rules("add", {
 			required: true,
-		//	chekholdr: true,
+			chekholdr: true,
 			messages: {
-				required: "Debe ingresar su nombre o seudónimo"//,
-		//		chekholdr: "Debe ingresar su nombre o seudónimo"
+				required: "Debe ingresar su nombre o seudónimo",
+				chekholdr: "Debe ingresar su nombre o seudónimo"
 			}
 		});
 
-	*/
+	
+		jQuery("#email").rules("add", {
+			emailnchekholdr: true,
+			messages: {
+				emailnchekholdr: "Ingrese una dirección de correo válida"
+			}
+		});
+	
 		jQuery("#denuncia").rules("add", {
 			required: true,
 			messages: {

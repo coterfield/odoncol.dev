@@ -28,7 +28,7 @@
 							<div class="field">
 								<label>EMail: </label>
 								<div class="entry medium">
-									<input type="text" placeholder="Correo Electrónico" class="email" name="email" id="email" value="<?=set_value('email');?>" />
+									<input type="text" placeholder="Correo Electrónico" class="" name="email" id="email" value="<?=set_value('email');?>" />
 								</div>
 							</div>
 

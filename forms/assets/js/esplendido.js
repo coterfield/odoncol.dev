@@ -23,8 +23,8 @@ jQuery(function(){
 		jQuery('.validate').validate({
 			ignore: [],
 			onclick: false,
-			onkeyup: false,
-			onfocusout: false,
+		//	onkeyup: false,
+		//	onfocusout: false,
 			success: function(label) {
 				var c = label.closest('.entry');
 				if(!c[0])

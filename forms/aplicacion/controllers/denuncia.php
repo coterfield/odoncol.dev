@@ -74,7 +74,9 @@ class Denuncia extends CI_Controller {
 		//	$this->firephp->info($sanjuan);
 
 			if ($_SERVER['SERVER_ADDR'] == '72.9.154.62') {
-				$this->send_mail($email,$data['formulario']);
+				if ($email) {
+					$this->send_mail($email,$data['formulario']);
+				}				
 			}
 
 			$this->load->view('msg_gracias', $data);
